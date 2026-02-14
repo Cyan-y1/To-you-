@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Valentine · vintage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="particle-container" id="particleContainer"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="card">
+        <!-- NORMAL STATE (avant Oui) -->
+        <div id="normalState">
+            <div class="title-container">
+                <div class="title-item enter-active">15/08 to here & more </div>
+            </div>
+            <div class="sub" id="subtitle">for you</div>
+
+            <!-- GIF principal (rond) -->
+            <div class="gif-container">
+                <img src="https://media.tenor.com/VIChDQ6ejRQAAAAj/jumping-bear-hearts-no-png.gif" alt="Romantic GIF">
+            </div>
+
+            <!-- Conteneurs pour les effets temporaires -->
+            <div class="effect-container" id="secondClickGif" style="display: none;">
+                <img src="https://i.imgur.com/KD99w1C.gif" alt="GIF 2ème clic">
+            </div>
+            <div class="effect-container" id="thirdClickImage" style="display: none;">
+                <img src="https://i.imgur.com/f0W4awc.jpeg" alt="Surprise">
+            </div>
+            <div class="effect-container" id="specialGifContainer" style="display: none;">
+                <img src="https://i.imgur.com/GYvvP3p.gif" alt="Surprise GIF">
+            </div>
+
+            <!-- Mini-lecteur audio (caché par défaut) -->
+            <div class="music-player" id="musicPlayer" style="display: none;">
+                <button class="music-btn play" id="playMusic">▶️ Play</button>
+                <button class="music-btn stop" id="stopMusic">⏹️ Stop</button>
+                <button class="music-btn close" id="closePlayer">❌</button>
+            </div>
+
+            <div class="question-container">
+                <div class="question-item enter-active">Will you be my valentine ?</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-oui" id="btnOui">Yes</button>
+                <button class="btn btn-non" id="btnNon">No</button>
+                <button class="btn btn-special" id="btnSpecial">✨</button>
+            </div>
+
+            <div class="message-reponse" id="responseMessage">💬 Waiting for her to cook…</div>
+        </div>
+
+        <!-- AFTER YES STATE -->
+        <div id="yesState">
+            <div class="gif-container">
+                <img src="https://media.tenor.com/f1xnRxTRxLAAAAAj/bears-with-kisses-bg.gif" alt="Kisses GIF">
+            </div>
+            <div class="final-image-container">
+                <img src="https://i.imgur.com/KOQ8X3F.png" alt="Notre photo">
+            </div>
+            <div class="message">MY MALIKA MY ONLY ONE YESSSS MY PARTNER!!! 💖♾️🎉</div>
+            <!-- Petit GIF ajouté -->
+            <div class="small-gif-container">
+                <img src="https://i.imgur.com/pm2IDYq.gif" alt="Petit GIF">
+            </div>
+        </div>
+    </div>
+
+    <!-- Élément audio caché -->
+    <audio id="bgMusic" preload="auto">
+        <source src="https://lively-moccasin-5rhz6g7hhv.edgeone.app/Lana%20Del%20Rey%20-%20Young%20and%20Beautiful.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
