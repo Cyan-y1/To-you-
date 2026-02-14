@@ -45,7 +45,6 @@
 
     // ========== FONCTIONS D'ANIMATION ==========
 
-    // Cœurs flottants en arrière-plan
     function createFloatingHearts() {
         if (!floatingHearts) return;
         const symbols = ['❤️', '💖', '💗', '💓', '💕', '💞'];
@@ -62,7 +61,6 @@
         }
     }
 
-    // Particules au clic
     function createParticle(e) {
         let x, y;
         if (e.touches) {
@@ -87,7 +85,6 @@
         }
     }
 
-    // Pluie de cœurs
     function createHeartRain(count = 30) {
         for (let i = 0; i < count; i++) {
             const heart = document.createElement('div');
@@ -99,7 +96,6 @@
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 3000);
         }
-        // Confettis
         for (let i = 0; i < count * 1.2; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
@@ -113,7 +109,6 @@
         }
     }
 
-    // Forte pluie d'eau
     function createHeavyRain(count = 60) {
         for (let i = 0; i < count; i++) {
             const drop = document.createElement('div');
@@ -153,11 +148,9 @@
         if (isValentine || btnNon.disabled) return;
         noClicks++;
 
-        // Agrandir le bouton Oui
         btnOui.style.fontSize = (16 + noClicks * 20) + 'px';
         btnOui.style.transform = `scale(${1 + noClicks * 0.1})`;
 
-        // Changer le texte du bouton Non
         if (noClicks <= NO_PHRASES.length) {
             btnNon.innerText = NO_PHRASES[noClicks - 1];
         }
@@ -167,7 +160,6 @@
             ? ` Only ${remaining} more click(s)…` 
             : "Come to me ";
 
-        // Effets par numéro de clic
         if (noClicks === 2) {
             secondClickGif.style.display = 'block';
         }
@@ -181,7 +173,6 @@
             specialGifContainer.style.display = 'block';
         }
 
-        // Transformation du bouton Non en Oui au max
         if (noClicks >= NO_PHRASES.length) {
             btnNon.innerText = "Rendez-vous at Saint Peterburgs, i will fix you.";
             btnNon.classList.remove('btn-non');
@@ -190,7 +181,6 @@
             btnNon.addEventListener('click', actionOui);
         }
 
-        // Pluie de cœurs progressive
         createHeartRain(Math.min(noClicks * 10, 60));
         if (event) createParticle(event);
     }
@@ -209,7 +199,6 @@
         musicPlayer.style.display = 'none';
     });
 
-    // Bouton spécial : affiche le lecteur
     btnSpecial.addEventListener('click', () => {
         if (isValentine) return;
         musicPlayer.style.display = 'flex';
@@ -220,9 +209,8 @@
     btnNon.addEventListener('click', actionNon);
     document.querySelector('.card').addEventListener('click', createParticle);
     document.querySelector('.card').addEventListener('touchstart', createParticle, { passive: true });
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
-    });
+
+    // Plus aucun preventDefault sur les boutons – ils réagissent normalement sur mobile !
 
     // ========== INITIALISATION ==========
     createFloatingHearts();
