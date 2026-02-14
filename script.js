@@ -113,7 +113,7 @@
         for (let i = 0; i < count; i++) {
             const drop = document.createElement('div');
             drop.className = 'water-rain';
-            drop.innerHTML = '💧';
+            drop.innerHTML = '🪳';
             drop.style.left = Math.random() * 100 + '%';
             drop.style.fontSize = (1.5 + Math.random() * 2.2) + 'rem';
             drop.style.animationDuration = (1.8 + Math.random() * 1.5) + 's';
@@ -220,4 +220,5 @@
         }
     }, 2500);
 })();
+
 
