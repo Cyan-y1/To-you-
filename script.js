@@ -4,9 +4,9 @@
     const NO_PHRASES = [
         "No ?💔",
         "Really ? NO TO ME ?",
-        "YE GO TO JAIL WITH ME VILAIN SARAKZIT ",
+        "U DESERVE JAIL SARAKZIT ",
         "DO YOU WANT TO FIGHT FOR REAL ?",
-        "OY HOW CAN YOU ? ",
+        "OY OY OY U WILL SEE ",
         "SKY IS BLUE AND YOUR ASS IS RED ",
         "Rendez-vous in Saint Petersburg, i will fix you."
     ];
@@ -220,3 +220,4 @@
         }
     }, 2500);
 })();
+
